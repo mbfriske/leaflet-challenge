@@ -112,9 +112,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_m
 
 
     legend.onAdd = function() {
-        var div = L
-            .DomUtil
-            .create("div", "info legend");
+        var div = L.DomUtil.create("div", "info legend");
 
         var grades = [0, 1, 2, 3, 4, 5];
         var colors = [
@@ -128,7 +126,8 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_m
 
 
         for (var i = 0; i < grades.length; i++) {
-            div.innerHTML += "<i style='background: " + colors[i] + "'></i> " +
+            div.innerHTML += 
+                "<i style='background: " + colors[i] + "'></i> " +
                 grades[i] + (grades[i + 1] ? "&ndash;" + grades[i + 1] + "<br>" : "+");
         }
         return div;
